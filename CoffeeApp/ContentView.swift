@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    let appTitle = "Coffee ☕️"
+    var milk = true
+    var quantity = 0
+    var range = 1...10
+    var iced: Bool
+    var suger: Bool
+    
+    
     var body: some View {
         VStack{
             Text("Coffee ☕️")
