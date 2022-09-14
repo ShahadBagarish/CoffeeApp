@@ -9,8 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            Text("Coffee ☕️")
+                .padding()
+                .font(.largeTitle)
+            Toggle(isOn: .constant(true)) {
+                Text("Include Milk 🥛")
+            }
+            Toggle(isOn: .constant(false)) {
+                Text("Iced 🧊")
+            }
+            Toggle(isOn: .constant(true)) {
+                Text("Spoon of Sugar 🍡 ")
+            }
+            Stepper(value: .constant(0), in: 1...10 ) {
+                Text("Quantity: 0")
+            }
+            Button("Order") {}
+
+        }
+        .padding()
     }
 }
 
