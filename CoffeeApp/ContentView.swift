@@ -9,28 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     let appTitle = "Coffee ☕️"
-    var milk = true
-    var quantity = 0
-    var range = 1...10
-    var iced: Bool
-    var suger: Bool
+    @State var milk = true
+    @State var quantity = 0
+    @State var range = 1...10
+    @State var iced: Bool
+    @State var suger: Bool
 
     
     var body: some View {
         VStack{
-            Text("Coffee ☕️")
+            Text(appTitle)
                 .padding()
                 .font(.largeTitle)
-            Toggle(isOn: .constant(true)) {
+            Toggle(isOn: $milk) {
                 Text("Include Milk 🥛")
             }
-            Toggle(isOn: .constant(false)) {
+            Toggle(isOn: $iced) {
                 Text("Iced 🧊")
             }
-            Toggle(isOn: .constant(true)) {
+            Toggle(isOn: $suger) {
                 Text("Spoon of Sugar 🍡 ")
             }
-            Stepper(value: .constant(0), in: 1...10 ) {
+            Stepper(value: $quantity, in: range ) {
                 Text("Quantity: 0")
             }
             Button("Order") {}
