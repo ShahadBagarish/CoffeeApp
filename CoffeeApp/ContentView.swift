@@ -14,7 +14,7 @@ struct ContentView: View {
     var range = 1...10
     var iced: Bool
     var suger: Bool
-    
+
     
     var body: some View {
         VStack{
@@ -42,6 +42,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(iced: true, suger: true)
     }
 }
